@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('blog.index');
-    //return view('welcome');
+Route::group(['prefix' => 'api'], function() {
+    // all routes that don't need to go to react-router
+    // Route::resources([
+    //     'blog'=>'BlogController'
+    // ]);
+    Route::resource('blog', 'BlogController');
 });
 
-Route::resource('blog', 'BlogController');
+Route::any('/{path?}', function () {
+    return view('index');
+})
+->where(['path' => '.*']);

@@ -47,7 +47,8 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        //
+        $details[] = $blog;
+        return response()->json($details);
     }
 
     /**

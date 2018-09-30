@@ -11,5 +11,17 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.webpackConfig({
+    //target:'node',
+    // node: {
+    //   fs: "empty"
+    // },
+    resolve: {
+        alias: {
+            "handlebars" : "handlebars/dist/handlebars.js"
+        }
+    },
+}); 
+
 mix.react('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
