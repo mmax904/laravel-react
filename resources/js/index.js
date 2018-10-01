@@ -1,11 +1,10 @@
 const config = require('./config/manish.js');
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import Blog from './components/Blog';
 import BlogArticle from './components/BlogArticle';
 import Example from './components/Example';
-
 import Master from './components/Master';
 import CreateItem from './components/CreateItem';
 import DisplayItem from './components/DisplayItem';
@@ -17,16 +16,26 @@ export default class Index extends Component {
             <div className="container">
                 <Router>
                     <div>
-                        <Link to={config.url.path}>Home</Link>
-                        <Link to={config.url.path+'blog'}>Blogs</Link>
+                        <nav className="navbar navbar-default">
+                            <div className="container-fluid">
+                                <div className="navbar-header">
+                                    <a className="navbar-brand" href={config.url.path}>Home</a>
+                                </div>
+                                <ul className="nav navbar-nav">
+                                    <li><Link to={config.url.path}>Home</Link></li>
+                                    <li><Link to={config.url.path+"blog"}>Blogs</Link></li>
+                                    <li><Link to={config.url.path+"items"}>Items</Link></li>
+                                </ul>
+                            </div>
+                        </nav>
+
                         <Route path={config.url.path} exact component={Example}></Route>
                         <Route path={config.url.path+'blog'} exact component={Blog}></Route>
                         <Route path={config.url.path+'blog/:id'} exact render={props=> <BlogArticle{...props} />}></Route>
-                        <Route path="/" component={Master} >
-                            <Route path={config.url.path+"/add-item"} component={CreateItem} />
-                            <Route path={config.url.path+"/display-item"} component={DisplayItem} />
-                            <Route path={config.url.path+"/edit/:id"} component={EditItem} />
-                        </Route>
+                        <Route path={config.url.path+'items'} exact component={Master}></Route>
+                        <Route path={config.url.path+"add-item"} exact component={CreateItem} />
+                        <Route path={config.url.path+"display-item"} exact component={DisplayItem} />
+                        <Route path={config.url.path+"edit/:id"} exact component={EditItem} />
                     </div>
                 </Router>
             </div>

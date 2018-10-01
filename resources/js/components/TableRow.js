@@ -9,7 +9,7 @@ class TableRow extends Component {
     }
     handleSubmit(event) {
         event.preventDefault();
-        let uri = `http://localhost:8000/items/${this.props.obj.id}`;
+        let uri = `${config.url.api}items/${this.props.obj.id}`;
         axios.delete(uri);
         browserHistory.push('/display-item');
     }

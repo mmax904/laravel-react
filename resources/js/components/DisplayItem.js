@@ -1,6 +1,6 @@
 const config = require('../config/manish.js');
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import TableRow from './TableRow';
 
@@ -10,7 +10,7 @@ class DisplayItem extends Component {
 		this.state = { value: '', items: '' };
 	}
 	componentDidMount() {
-		axios.get('http://localhost:8000/items')
+		axios.get(`${config.url.api}items`)
 			.then(response => {
 				this.setState({ items: response.data });
 			})

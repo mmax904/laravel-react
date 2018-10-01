@@ -1,22 +1,17 @@
 const config = require('../config/manish.js');
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
 class CreateItem extends Component {
     constructor(props) {
         super(props);
         this.state = { productName: '', productPrice: '' };
-
-        this.handleChange1 = this.handleChange1.bind(this);
-        this.handleChange2 = this.handleChange2.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleChange1(e) {
+    handleNameChange(e) {
         this.setState({
             productName: e.target.value
         })
     }
-    handleChange2(e) {
+    handlePriceChange(e) {
         this.setState({
             productPrice: e.target.value
         })
@@ -27,9 +22,9 @@ class CreateItem extends Component {
             name: this.state.productName,
             price: this.state.productPrice
         }
-        let uri = 'http://localhost:8000/items';
+        let uri = `${config.url.api}items`;
         axios.post(uri, products).then((response) => {
-            this.props.history.push('/display-item');
+            this.props.history.push(config.url.path+'display-item');
         });
     }
 
@@ -37,12 +32,12 @@ class CreateItem extends Component {
         return (
             <div>
                 <h1>Create An Item</h1>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={(e)=>this.handleSubmit(e)}>
                     <div className="row">
                         <div className="col-md-6">
                             <div className="form-group">
                                 <label>Item Name:</label>
-                                <input type="text" className="form-control" onChange={this.handleChange1} />
+                                <input type="text" className="form-control" onChange={(e)=>this.handleNameChange(e)} />
                             </div>
                         </div>
                     </div>
@@ -50,7 +45,7 @@ class CreateItem extends Component {
                         <div className="col-md-6">
                             <div className="form-group">
                                 <label>Item Price:</label>
-                                <input type="text" className="form-control col-md-6" onChange={this.handleChange2} />
+                                <input type="text" className="form-control col-md-6" onChange={(e)=>this.handlePriceChange(e)} />
                             </div>
                         </div>
                     </div><br />

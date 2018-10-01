@@ -37874,7 +37874,6 @@ var config = __webpack_require__(12);
 
 
 
-
 var Index = function (_Component) {
     _inherits(Index, _Component);
 
@@ -37897,27 +37896,62 @@ var Index = function (_Component) {
                         'div',
                         null,
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                            { to: config.url.path },
-                            'Home'
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-                            { to: config.url.path + 'blog' },
-                            'Blogs'
+                            'nav',
+                            { className: 'navbar navbar-default' },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'container-fluid' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'div',
+                                    { className: 'navbar-header' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'a',
+                                        { className: 'navbar-brand', href: config.url.path },
+                                        'Home'
+                                    )
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'ul',
+                                    { className: 'nav navbar-nav' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
+                                            { to: config.url.path },
+                                            'Home'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
+                                            { to: config.url.path + "blog" },
+                                            'Blogs'
+                                        )
+                                    ),
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                        'li',
+                                        null,
+                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
+                                            { to: config.url.path + "items" },
+                                            'Items'
+                                        )
+                                    )
+                                )
+                            )
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path, exact: true, component: __WEBPACK_IMPORTED_MODULE_5__components_Example__["a" /* default */] }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + 'blog', exact: true, component: __WEBPACK_IMPORTED_MODULE_3__components_Blog__["a" /* default */] }),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + 'blog/:id', exact: true, render: function render(props) {
                                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_BlogArticle__["a" /* default */], props);
                             } }),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */],
-                            { path: '/', component: __WEBPACK_IMPORTED_MODULE_6__components_Master__["a" /* default */] },
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + "/add-item", component: __WEBPACK_IMPORTED_MODULE_7__components_CreateItem__["a" /* default */] }),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + "/display-item", component: __WEBPACK_IMPORTED_MODULE_8__components_DisplayItem__["a" /* default */] }),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + "/edit/:id", component: __WEBPACK_IMPORTED_MODULE_9__components_EditItem__["a" /* default */] })
-                        )
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + 'items', exact: true, component: __WEBPACK_IMPORTED_MODULE_6__components_Master__["a" /* default */] }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + "add-item", exact: true, component: __WEBPACK_IMPORTED_MODULE_7__components_CreateItem__["a" /* default */] }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + "display-item", exact: true, component: __WEBPACK_IMPORTED_MODULE_8__components_DisplayItem__["a" /* default */] }),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], { path: config.url.path + "edit/:id", exact: true, component: __WEBPACK_IMPORTED_MODULE_9__components_EditItem__["a" /* default */] })
                     )
                 )
             );
@@ -61521,7 +61555,6 @@ if (document.getElementById('example')) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(15);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -61533,7 +61566,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var config = __webpack_require__(12);
 
 
-
 var CreateItem = function (_Component) {
     _inherits(CreateItem, _Component);
 
@@ -61543,23 +61575,19 @@ var CreateItem = function (_Component) {
         var _this = _possibleConstructorReturn(this, (CreateItem.__proto__ || Object.getPrototypeOf(CreateItem)).call(this, props));
 
         _this.state = { productName: '', productPrice: '' };
-
-        _this.handleChange1 = _this.handleChange1.bind(_this);
-        _this.handleChange2 = _this.handleChange2.bind(_this);
-        _this.handleSubmit = _this.handleSubmit.bind(_this);
         return _this;
     }
 
     _createClass(CreateItem, [{
-        key: 'handleChange1',
-        value: function handleChange1(e) {
+        key: 'handleNameChange',
+        value: function handleNameChange(e) {
             this.setState({
                 productName: e.target.value
             });
         }
     }, {
-        key: 'handleChange2',
-        value: function handleChange2(e) {
+        key: 'handlePriceChange',
+        value: function handlePriceChange(e) {
             this.setState({
                 productPrice: e.target.value
             });
@@ -61574,14 +61602,16 @@ var CreateItem = function (_Component) {
                 name: this.state.productName,
                 price: this.state.productPrice
             };
-            var uri = 'http://localhost:8000/items';
+            var uri = config.url.api + 'items';
             axios.post(uri, products).then(function (response) {
-                _this2.props.history.push('/display-item');
+                _this2.props.history.push(config.url.path + 'display-item');
             });
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this3 = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
@@ -61592,7 +61622,9 @@ var CreateItem = function (_Component) {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'form',
-                    { onSubmit: this.handleSubmit },
+                    { onSubmit: function onSubmit(e) {
+                            return _this3.handleSubmit(e);
+                        } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'row' },
@@ -61607,7 +61639,9 @@ var CreateItem = function (_Component) {
                                     null,
                                     'Item Name:'
                                 ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', onChange: this.handleChange1 })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', onChange: function onChange(e) {
+                                        return _this3.handleNameChange(e);
+                                    } })
                             )
                         )
                     ),
@@ -61625,7 +61659,9 @@ var CreateItem = function (_Component) {
                                     null,
                                     'Item Price:'
                                 ),
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control col-md-6', onChange: this.handleChange2 })
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control col-md-6', onChange: function onChange(e) {
+                                        return _this3.handlePriceChange(e);
+                                    } })
                             )
                         )
                     ),
@@ -61691,7 +61727,7 @@ var DisplayItem = function (_Component) {
 		value: function componentDidMount() {
 			var _this2 = this;
 
-			__WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:8000/items').then(function (response) {
+			__WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(config.url.api + 'items').then(function (response) {
 				_this2.setState({ items: response.data });
 			}).catch(function (error) {
 				console.log(error);
@@ -61810,9 +61846,6 @@ var EditItem = function (_Component) {
         var _this = _possibleConstructorReturn(this, (EditItem.__proto__ || Object.getPrototypeOf(EditItem)).call(this, props));
 
         _this.state = { name: '', price: '' };
-        _this.handleChange1 = _this.handleChange1.bind(_this);
-        _this.handleChange2 = _this.handleChange2.bind(_this);
-        _this.handleSubmit = _this.handleSubmit.bind(_this);
         return _this;
     }
 
@@ -61821,22 +61854,22 @@ var EditItem = function (_Component) {
         value: function componentDidMount() {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('http://localhost:8000/items/' + this.props.params.id + '/edit').then(function (response) {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(config.url.api.id + 'items/' + this.props.params.id + '/edit').then(function (response) {
                 _this2.setState({ name: response.data.name, price: response.data.price });
             }).catch(function (error) {
                 console.log(error);
             });
         }
     }, {
-        key: 'handleChange1',
-        value: function handleChange1(e) {
+        key: 'handleNameChange',
+        value: function handleNameChange(e) {
             this.setState({
                 name: e.target.value
             });
         }
     }, {
-        key: 'handleChange2',
-        value: function handleChange2(e) {
+        key: 'handlePriceChange',
+        value: function handlePriceChange(e) {
             this.setState({
                 price: e.target.value
             });
@@ -61851,14 +61884,16 @@ var EditItem = function (_Component) {
                 name: this.state.name,
                 price: this.state.price
             };
-            var uri = 'http://localhost:8000/items/' + this.props.params.id;
+            var uri = config.url.api + 'items/' + itemsthis.props.params.id;
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.patch(uri, products).then(function (response) {
-                _this3.props.history.push('/display-item');
+                _this3.props.history.push(config.url.path + 'display-item');
             });
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this4 = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
@@ -61876,14 +61911,16 @@ var EditItem = function (_Component) {
                         { className: 'col-md-2' },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                            { to: '/display-item', className: 'btn btn-success' },
+                            { to: config.url.path + "display-item", className: 'btn btn-success' },
                             'Return to Items'
                         )
                     )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'form',
-                    { onSubmit: this.handleSubmit },
+                    { onSubmit: function onSubmit(e) {
+                            return _this4.handleSubmit(e);
+                        } },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
                         { className: 'form-group' },
@@ -61895,7 +61932,9 @@ var EditItem = function (_Component) {
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text',
                             className: 'form-control',
                             value: this.state.name,
-                            onChange: this.handleChange1 })
+                            onChange: function onChange(e) {
+                                return _this4.handleNameChange(e);
+                            } })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
@@ -61907,7 +61946,9 @@ var EditItem = function (_Component) {
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control',
                             value: this.state.price,
-                            onChange: this.handleChange2 })
+                            onChange: function onChange(e) {
+                                return _this4.handlePriceChange(e);
+                            } })
                     ),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
@@ -61974,7 +62015,7 @@ var Master = function (_Component) {
                             { className: 'navbar-header' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'a',
-                                { className: 'navbar-brand', href: '#' },
+                                { className: 'navbar-brand', href: config.url.path },
                                 'Home'
                             )
                         ),
@@ -61986,7 +62027,7 @@ var Master = function (_Component) {
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { to: '/' },
+                                    { to: config.url.path + "items" },
                                     'Home'
                                 )
                             ),
@@ -61995,7 +62036,7 @@ var Master = function (_Component) {
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { to: 'add-item' },
+                                    { to: config.url.path + "add-item" },
                                     'Create Item'
                                 )
                             ),
@@ -62004,7 +62045,7 @@ var Master = function (_Component) {
                                 null,
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
-                                    { to: 'display-item' },
+                                    { to: config.url.path + "display-item" },
                                     'Display Item'
                                 )
                             )
@@ -62061,7 +62102,7 @@ var TableRow = function (_Component) {
         key: 'handleSubmit',
         value: function handleSubmit(event) {
             event.preventDefault();
-            var uri = 'http://localhost:8000/items/' + this.props.obj.id;
+            var uri = config.url.api + 'items/' + this.props.obj.id;
             axios.delete(uri);
             browserHistory.push('/display-item');
         }

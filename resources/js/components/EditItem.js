@@ -7,13 +7,10 @@ class EditItem extends Component {
     constructor(props) {
         super(props);
         this.state = { name: '', price: '' };
-        this.handleChange1 = this.handleChange1.bind(this);
-        this.handleChange2 = this.handleChange2.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:8000/items/${this.props.params.id}/edit`)
+        axios.get(`${config.url.api.id}items/${this.props.params.id}/edit`)
             .then(response => {
                 this.setState({ name: response.data.name, price: response.data.price });
             })
@@ -21,12 +18,12 @@ class EditItem extends Component {
                 console.log(error);
             })
     }
-    handleChange1(e) {
+    handleNameChange(e) {
         this.setState({
             name: e.target.value
         })
     }
-    handleChange2(e) {
+    handlePriceChange(e) {
         this.setState({
             price: e.target.value
         })
@@ -38,9 +35,9 @@ class EditItem extends Component {
             name: this.state.name,
             price: this.state.price
         }
-        let uri = 'http://localhost:8000/items/' + this.props.params.id;
+        let uri = `${config.url.api}items/${itemsthis.props.params.id}`;
         axios.patch(uri, products).then((response) => {
-            this.props.history.push('/display-item');
+            this.props.history.push(config.url.path+'display-item');
         });
     }
     render() {
@@ -50,23 +47,23 @@ class EditItem extends Component {
                 <div className="row">
                     <div className="col-md-10"></div>
                     <div className="col-md-2">
-                        <Link to="/display-item" className="btn btn-success">Return to Items</Link>
+                        <Link to={config.url.path+"display-item"} className="btn btn-success">Return to Items</Link>
                     </div>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={(e)=>this.handleSubmit(e)}>
                     <div className="form-group">
                         <label>Item Name</label>
                         <input type="text"
                             className="form-control"
                             value={this.state.name}
-                            onChange={this.handleChange1} />
+                            onChange={(e)=>this.handleNameChange(e)} />
                     </div>
 
                     <div className="form-group">
                         <label name="product_price">Item Price</label>
                         <input type="text" className="form-control"
                             value={this.state.price}
-                            onChange={this.handleChange2} />
+                            onChange={(e)=>this.handlePriceChange(e)} />
                     </div>
 
                     <div className="form-group">

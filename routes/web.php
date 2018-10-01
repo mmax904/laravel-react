@@ -17,7 +17,7 @@ Route::group(['prefix' => 'api'], function() {
     //     'blog'=>'BlogController'
     // ]);
     Route::resource('blog', 'BlogController');
-    Route::resource('item', 'ItemController');
+    Route::resource('items', 'ItemController');
 });
 
 Route::any('/{path?}', function () {
