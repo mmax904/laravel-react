@@ -10,8 +10,8 @@ class TableRow extends Component {
     handleSubmit(event) {
         event.preventDefault();
         let uri = `${config.url.api}items/${this.props.obj.id}`;
-        axios.delete(uri);
-        browserHistory.push('/display-item');
+        console.log(this.props)
+        //axios.delete(uri);
     }
     render() {
         return (

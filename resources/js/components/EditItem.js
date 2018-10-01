@@ -9,14 +9,18 @@ class EditItem extends Component {
         this.state = { name: '', price: '' };
     }
 
-    componentDidMount() {
-        axios.get(`${config.url.api.id}items/${this.props.params.id}/edit`)
-            .then(response => {
-                this.setState({ name: response.data.name, price: response.data.price });
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+    componentDidMount(e) {
+        let uri = `${config.url.api}items/${this.props.match.params.id}`;
+        axios.get(uri)
+        .then(response => {
+            this.setState({ 
+                name: response.data.name,
+                price: response.data.price
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
     }
     handleNameChange(e) {
         this.setState({
@@ -35,7 +39,7 @@ class EditItem extends Component {
             name: this.state.name,
             price: this.state.price
         }
-        let uri = `${config.url.api}items/${itemsthis.props.params.id}`;
+        let uri = `${config.url.api}items/${this.props.match.params.id}`;
         axios.patch(uri, products).then((response) => {
             this.props.history.push(config.url.path+'display-item');
         });

@@ -52,7 +52,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        //
+        return response()->json($item);
     }
 
     /**
@@ -63,7 +63,7 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-        $item = Item::find($id);
+        $item[] = $id;
         return response()->json($item);
     }
 
@@ -76,7 +76,6 @@ class ItemController extends Controller
      */
     public function update(Request $request, Item $item)
     {
-        $item = Item::find($id);
         $item->name = $request->get('name');
         $item->price = $request->get('price');
         $item->save();
@@ -92,9 +91,7 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
-        $item = Item::find($id);
         $item->delete();
-
         return response()->json('Successfully Deleted');
     }
 }

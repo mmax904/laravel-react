@@ -61851,11 +61851,15 @@ var EditItem = function (_Component) {
 
     _createClass(EditItem, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {
+        value: function componentDidMount(e) {
             var _this2 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(config.url.api.id + 'items/' + this.props.params.id + '/edit').then(function (response) {
-                _this2.setState({ name: response.data.name, price: response.data.price });
+            var uri = config.url.api + 'items/' + this.props.match.params.id;
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get(uri).then(function (response) {
+                _this2.setState({
+                    name: response.data.name,
+                    price: response.data.price
+                });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -61884,7 +61888,7 @@ var EditItem = function (_Component) {
                 name: this.state.name,
                 price: this.state.price
             };
-            var uri = config.url.api + 'items/' + itemsthis.props.params.id;
+            var uri = config.url.api + 'items/' + this.props.match.params.id;
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.patch(uri, products).then(function (response) {
                 _this3.props.history.push(config.url.path + 'display-item');
             });
@@ -62103,8 +62107,8 @@ var TableRow = function (_Component) {
         value: function handleSubmit(event) {
             event.preventDefault();
             var uri = config.url.api + 'items/' + this.props.obj.id;
-            axios.delete(uri);
-            browserHistory.push('/display-item');
+            console.log(this.props);
+            //axios.delete(uri);
         }
     }, {
         key: 'render',
