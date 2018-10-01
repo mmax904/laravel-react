@@ -5,12 +5,11 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 class TableRow extends Component {
     constructor(props) {
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleSubmit(event) {
         event.preventDefault();
         let uri = `${config.url.api}items/${this.props.obj.id}`;
-        //axios.delete(uri);
+        axios.delete(uri);
         this.props.deleteItem();
     }
     render() {
@@ -29,7 +28,7 @@ class TableRow extends Component {
                     <Link to={"edit/" + this.props.obj.id} className="btn btn-primary">Edit</Link>
                 </td>
                 <td>
-                    <form onSubmit={this.handleSubmit}>
+                    <form onSubmit={(e)=>this.handleSubmit(e)}>
                         <input type="submit" value="Delete" className="btn btn-danger" />
                     </form>
                 </td>

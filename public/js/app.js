@@ -62010,10 +62010,7 @@ var TableRow = function (_Component) {
     function TableRow(props) {
         _classCallCheck(this, TableRow);
 
-        var _this = _possibleConstructorReturn(this, (TableRow.__proto__ || Object.getPrototypeOf(TableRow)).call(this, props));
-
-        _this.handleSubmit = _this.handleSubmit.bind(_this);
-        return _this;
+        return _possibleConstructorReturn(this, (TableRow.__proto__ || Object.getPrototypeOf(TableRow)).call(this, props));
     }
 
     _createClass(TableRow, [{
@@ -62021,12 +62018,14 @@ var TableRow = function (_Component) {
         value: function handleSubmit(event) {
             event.preventDefault();
             var uri = config.url.api + 'items/' + this.props.obj.id;
-            //axios.delete(uri);
+            axios.delete(uri);
             this.props.deleteItem();
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'tr',
                 null,
@@ -62059,7 +62058,9 @@ var TableRow = function (_Component) {
                     null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'form',
-                        { onSubmit: this.handleSubmit },
+                        { onSubmit: function onSubmit(e) {
+                                return _this2.handleSubmit(e);
+                            } },
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', value: 'Delete', className: 'btn btn-danger' })
                     )
                 )
