@@ -18,10 +18,20 @@ class DisplayItem extends Component {
 				console.log(error);
 			})
 	}
+
+	removeTableRow(i) {
+		const items = this.state.items;
+		items.splice(i,1);
+		this.setState({
+			items : items
+		});
+	}
+
 	tabRow() {
+		const deleteRow = this.removeTableRow.bind(this);
 		if (this.state.items instanceof Array) {
 			return this.state.items.map(function (object, i) {
-				return <TableRow obj={object} key={i} />;
+				return <TableRow obj={object} key={i} deleteItem={(e)=>deleteRow(i)} />;
 			})
 		}
 	}
@@ -34,7 +44,7 @@ class DisplayItem extends Component {
 				<div className="row">
 					<div className="col-md-10"></div>
 					<div className="col-md-2">
-						<Link to="/add-item">Create Item</Link>
+						<Link to={config.url.api+"add-item"}>Create Item</Link>
 					</div>
 				</div><br />
 

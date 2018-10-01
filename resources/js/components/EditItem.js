@@ -41,7 +41,7 @@ class EditItem extends Component {
         }
         let uri = `${config.url.api}items/${this.props.match.params.id}`;
         axios.patch(uri, products).then((response) => {
-            this.props.history.push(config.url.path+'display-item');
+            this.props.history.push(config.url.path+'items');
         });
     }
     render() {
@@ -51,7 +51,7 @@ class EditItem extends Component {
                 <div className="row">
                     <div className="col-md-10"></div>
                     <div className="col-md-2">
-                        <Link to={config.url.path+"display-item"} className="btn btn-success">Return to Items</Link>
+                        <Link to={config.url.path+"items"} className="btn btn-success">Return to Items</Link>
                     </div>
                 </div>
                 <form onSubmit={(e)=>this.handleSubmit(e)}>
