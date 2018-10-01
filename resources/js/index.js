@@ -6,6 +6,11 @@ import Blog from './components/Blog';
 import BlogArticle from './components/BlogArticle';
 import Example from './components/Example';
 
+import Master from './components/Master';
+import CreateItem from './components/CreateItem';
+import DisplayItem from './components/DisplayItem';
+import EditItem from './components/EditItem';
+
 export default class Index extends Component {
     render() {
         return (
@@ -17,6 +22,11 @@ export default class Index extends Component {
                         <Route path={config.url.path} exact component={Example}></Route>
                         <Route path={config.url.path+'blog'} exact component={Blog}></Route>
                         <Route path={config.url.path+'blog/:id'} exact render={props=> <BlogArticle{...props} />}></Route>
+                        <Route path="/" component={Master} >
+                            <Route path={config.url.path+"/add-item"} component={CreateItem} />
+                            <Route path={config.url.path+"/display-item"} component={DisplayItem} />
+                            <Route path={config.url.path+"/edit/:id"} component={EditItem} />
+                        </Route>
                     </div>
                 </Router>
             </div>
