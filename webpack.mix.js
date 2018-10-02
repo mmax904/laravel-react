@@ -12,10 +12,6 @@ const path = require('path');
  |
  */
 
-// mix.browserSync({
-//     proxy: 'localhost'
-// }); 
-
 mix.webpackConfig({
     //target:'node',
     // node: {
@@ -26,7 +22,7 @@ mix.webpackConfig({
     },
     resolve: {
         alias : {
-            '@': path.resolve(__dirname, 'resources/assets/js'),
+            '@': path.resolve(__dirname, 'resources/js'),
             'public': path.resolve(__dirname, 'public'),
             'node': path.resolve(__dirname, 'node'),
             "handlebars" : "handlebars/dist/handlebars.js"
@@ -35,13 +31,14 @@ mix.webpackConfig({
 }); 
 
 mix.react('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+    .extract(['react'])
+    .sass('resources/sass/app.scss', 'public/css');
  
 if (mix.inProduction()) {
-   mix.version()
+    mix.version()
 } else {
     mix.sourceMaps()
-    mix.browserSync({
-        proxy: 'http://laravel-react.test'
-    })
+    // mix.browserSync({
+    //     proxy: 'http://laravel-react.test'
+    // })
 }
