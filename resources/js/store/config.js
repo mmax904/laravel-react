@@ -3,17 +3,27 @@
  */
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-// import { createLogger } from 'redux-logger'
+//import { createLogger } from 'redux-logger'
 import rootReducer from './reducers'
+import logger from './logger'
+import crashReporter from './crashReporter'
 
+//const loggerMiddleware = createLogger();
+const middlewares = [
+  thunk,
+  logger,
+  crashReporter
+];
+//middlewares.push(loggerMiddleware);
+//const storeConfig = (initialState = {}) => {
 export default function (initialState = {}) {
   // Middleware and store enhancers
   const enhancers = [
-    applyMiddleware(thunk),
+    applyMiddleware(...middlewares),
   ]
   
   if (process.env.NODE_ENV !== 'production') {
-    // enhancers.push(applyMiddleware(createLogger()))
+    //enhancers.push(applyMiddleware(loggerMiddleware))
     window.devToolsExtension && enhancers.push(window.devToolsExtension())
   }
   
@@ -27,6 +37,7 @@ export default function (initialState = {}) {
       store.replaceReducer(nextReducer)
     })
   }
-  
-  return store
+  return store 
 }
+
+//export default storeConfig
