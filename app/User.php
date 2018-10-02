@@ -31,6 +31,17 @@ class User extends Authenticatable
     protected $casts = [
         'is_admin' => 'boolean',
     ];
+    
+    //Enable for custom passport auth
+    // public function findForPassport($data)
+    // {
+    //     return $this->where('email',$data)->first();
+    // }
+
+    // public function validateForPassportPasswordGrant($data)
+    // {
+    //     return true;
+    // }
 
     /**
      * The relation between user and articles

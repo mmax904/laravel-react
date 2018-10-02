@@ -19,19 +19,17 @@ class LoginController extends Controller
         ]);
         try {
             $http = new Client;
-
-            $response = $http->post(env('APP_URL') . '/oauth/token', [
+            $response = $http->post(env('APP_FULL_URL').'oauth/token', [
                 'form_params' => [
                     'grant_type' => 'password',
                     'client_id' => env('PASSWORD_CLIENT_ID'),
                     'client_secret' => env('PASSWORD_CLIENT_SECRET'),
-                    'username' => $request->get('email'),
-                    'password' => $request->get('password'),
-                    'remember' => $request->get('remember'),
+                    'username' => (string)$request->get('email'),
+                    'password' => (string)$request->get('password'),
+                    'remember' => (bool)$request->get('remember'),
                     'scope' => '',
                 ],
             ]);
-
             return json_decode((string)$response->getBody(), true);
         } catch (\Exception $e) {
             return response()->json([
