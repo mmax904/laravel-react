@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel 5.7 with React 16 Boilerplate') }}</title>
 
     <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -25,8 +25,8 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{mix('js/manifest.js')}}"></script>
-<script src="{{mix('js/vendor.js')}}"></script>
-<script src="{{mix('js/app.js')}}"></script>
+<script src="{{ asset(mix('js/manifest.js')) }}"></script>
+<script src="{{ asset(mix('js/vendor.js')) }}"></script>
+<script src="{{ asset(mix('js/app.js')) }}"></script>
 </body>
 </html>
