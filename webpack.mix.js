@@ -11,6 +11,10 @@ let mix = require('laravel-mix');
  |
  */
 
+// mix.browserSync({
+//     proxy: 'localhost'
+// }); 
+
 mix.webpackConfig({
     //target:'node',
     // node: {

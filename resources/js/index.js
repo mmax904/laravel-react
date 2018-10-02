@@ -2,12 +2,12 @@ const config = require('./config/manish.js');
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import Blog from './components/Blog';
-import BlogArticle from './components/BlogArticle';
-import Example from './components/Example';
+import Blog from './components/blogs/Blog.js';
+import BlogArticle from './components/blogs/BlogArticle.js';
+import Example from './components/items/Example.js';
 //import Master from './components/Master';
-import CreateItem from './components/CreateItem';
-import DisplayItem from './components/DisplayItem';
+import CreateItem from './components/items/CreateItem.js';
+import DisplayItem from './components/items/DisplayItem.js';
 import EditItem from './components/EditItem';
 
 export default class Index extends Component {

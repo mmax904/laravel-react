@@ -1,13 +1,26 @@
 {
-    "name": "laravel/laravel",
+    "name": "manish-mahant/laravel-react",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel",
+        "react",
+        "laravel-react",
+        "laravel-react-boilerplate",
+        "react-16",
+        "laravel-5.7",
+        "bootstrap-4",
+        "passport",
+        "laravel-passport",
+        "react-router-4"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": "^7.1.3",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
+        "laravel/passport": "^7.0",
         "laravel/tinker": "^1.0"
     },
     "require-dev": {

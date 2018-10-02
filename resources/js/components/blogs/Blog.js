@@ -1,4 +1,4 @@
-const config = require('../config/manish.js');
+const config = require('../../config/manish.js');
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import axios from 'axios';

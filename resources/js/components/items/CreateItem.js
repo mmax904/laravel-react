@@ -1,4 +1,4 @@
-const config = require('../config/manish.js');
+const config = require('../../config/manish.js');
 import React, { Component } from 'react';
 
 class CreateItem extends Component {
