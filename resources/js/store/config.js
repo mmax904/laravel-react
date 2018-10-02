@@ -5,14 +5,17 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 //import { createLogger } from 'redux-logger'
 import rootReducer from './reducers'
-import logger from './logger'
-import crashReporter from './crashReporter'
+import logger from '../middlewares/logger'
+import crashReporter from '../middlewares/crashReporter'
+// import * as allMiddleWares from '../middlewares/onePlaceForAll'
+import { timeoutScheduler } from '../middlewares/onePlaceForAll'
 
 //const loggerMiddleware = createLogger();
 const middlewares = [
   thunk,
   logger,
-  crashReporter
+  crashReporter,
+  timeoutScheduler
 ];
 //middlewares.push(loggerMiddleware);
 //const storeConfig = (initialState = {}) => {
