@@ -51,7 +51,7 @@ class Navigation extends Component {
   render() {
     return (
       <Navbar className="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-        <Link to="/" className="navbar-brand">MANISH.ME</Link>
+        <Link to="/laravel/larareact/public/" className="navbar-brand">MANISH.ME</Link>
         <NavbarToggler className="navbar-toggler d-lg-none" onClick={this.toggleNavbar} />
         {
           this.props.isAuthenticated

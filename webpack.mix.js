@@ -18,7 +18,7 @@ mix.webpackConfig({
     //   fs: "empty"
     // },
     output: {
-        chunkFilename: 'js/chunks/[name].js'
+        filename: '[name].js', chunkFilename: 'js/chunks/[name].app.js', publicPath: '/laravel/larareact/public/'
     },
     resolve: {
         alias : {

@@ -4,7 +4,7 @@ import store from '../store'
 import { authLogout } from '../modules/auth/store/actions'
 
 const version = 'v1'
-const API_URL = (process.env.NODE_ENV === 'test') ? process.env.BASE_URL || (`http://localhost:${process.env.PORT}/api/${version}/`) : `/api/${version}`;
+const API_URL = `http://localhost/laravel/larareact/public/api/${version}/`;
 
 axios.defaults.baseURL = API_URL;
 axios.defaults.headers.common.Accept = 'application/json';

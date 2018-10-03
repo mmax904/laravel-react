@@ -5,7 +5,7 @@ const displayName = "HomePageHeader"
 function Header() {
   return <header className="bg-primary text-white">
     <div className="container text-center">
-      <img width="125" height="125" src="/img/manish.jpeg" alt="..." className="rounded-circle" />
+      <img width="125" height="125" src="/laravel/larareact/public/img/manish.jpeg" alt="..." className="rounded-circle" />
       <h1>Manish Mahant</h1>
       <p className="lead">Electronics & Communication</p>
       <p className="lead">Fullstack Developer at&nbsp;

@@ -17,6 +17,7 @@ const Routes = () => (
     <Layout>
       <Switch>
         {routes.map((route, i) => {
+          route.path = '/laravel/larareact/public'+route.path
           if (route.auth) {
             return <PrivateRoute key={i} {...route} />
           }

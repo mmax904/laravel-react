@@ -23,8 +23,8 @@ const propTypes = {
 const PrivateHeader = ({ user, showNavigation, showDropdown, toggleDropdown, logout }) => (
   <Collapse className="navbar-collapse" isOpen={showNavigation}>
     <ul className="navbar-nav mr-auto">
-      <NavItem path="/">Home</NavItem>
-      <NavItem path="/articles">Articles</NavItem>
+      <NavItem path="/laravel/larareact/public/">Home</NavItem>
+      <NavItem path="/laravel/larareact/public/articles">Articles</NavItem>
     </ul>
     
     <ul className="navbar-nav">
@@ -33,7 +33,7 @@ const PrivateHeader = ({ user, showNavigation, showDropdown, toggleDropdown, log
           { user.name }
         </DropdownToggle>
         <DropdownMenu className="dropdown-menu-right">
-          <Link className='dropdown-item' to={`/users/${user.id}/edit`}>
+          <Link className='dropdown-item' to={`/laravel/larareact/public/users/${user.id}/edit`}>
             <span className="fa fa-user-o" title="logout" aria-hidden="true"/> Profile
           </Link>
           <DropdownItem divider />

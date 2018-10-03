@@ -77,7 +77,7 @@ class Page extends Component {
           <th>Created At</th>
           <th>Updated At</th>
           <th>Published At</th>
-          <th><Link to='/articles/create' className="btn btn-success">Add</Link></th>
+          <th><Link to='/laravel/larareact/public/articles/create' className="btn btn-success">Add</Link></th>
         </tr>
         </thead>
         <tbody>
