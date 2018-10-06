@@ -10478,8 +10478,8 @@ a.text-dark:focus {
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url("http://localhost/laravel/larareact/public/fontawesome-webfont.eot?v=4.7.0");
-  src: url("http://localhost/laravel/larareact/public/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("http://localhost/laravel/larareact/public/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("http://localhost/laravel/larareact/public/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("http://localhost/laravel/larareact/public/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("http://localhost/laravel/larareact/public/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  src: url("/laravel/larareact/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?v=4.7.0");
+  src: url("/laravel/larareact/public/fonts/vendor/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("/laravel/larareact/public/fonts/vendor/font-awesome/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/laravel/larareact/public/fonts/vendor/font-awesome/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("/laravel/larareact/public/fonts/vendor/font-awesome/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("/laravel/larareact/public/fonts/vendor/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
