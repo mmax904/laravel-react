@@ -7,15 +7,16 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers'
 import logger from '../middlewares/logger'
 import crashReporter from '../middlewares/crashReporter'
+import monitorReducerEnhancer from '../enhancers/monitorReducer'
 // import * as allMiddleWares from '../middlewares/onePlaceForAll'
 import { timeoutScheduler } from '../middlewares/onePlaceForAll'
 
 //const loggerMiddleware = createLogger();
 const middlewares = [
-  thunk,
-  logger,
-  crashReporter,
-  timeoutScheduler
+    thunk,
+    logger,
+    crashReporter,
+    timeoutScheduler
 ];
 //middlewares.push(loggerMiddleware);
 //const storeConfig = (initialState = {}) => {
@@ -27,6 +28,7 @@ export default function (initialState = {}) {
   
   if (process.env.NODE_ENV !== 'production') {
     //enhancers.push(applyMiddleware(loggerMiddleware))
+    enhancers.push(monitorReducerEnhancer)
     window.devToolsExtension && enhancers.push(window.devToolsExtension())
   }
   

@@ -9,7 +9,7 @@ const PrivateRoute = ({ component: Component, isAuthenticated, ...rest }) => {
     isAuthenticated
       ? <Component {...props}/>
       : <Redirect to={{
-        pathname: '/login',
+        pathname: '/laravel/larareact/public/login',
         state: { from: props.location },
       }}/>
   )}/>

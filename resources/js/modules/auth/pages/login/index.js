@@ -9,5 +9,8 @@ const mapStateToProps = state => {
     isAuthenticated: state.auth.isAuthenticated,
   }
 }
-
-export default connect(mapStateToProps)(Page)
+export default connect(state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  isFetching: true
+}))(Page)
+//export default connect(mapStateToProps)(Page)

@@ -18,6 +18,7 @@ export const timeoutScheduler = store => next => action => {
 }
 
 /**
+ * raf:requestAnimationFrame
  * Schedules actions with { meta: { raf: true } } to be dispatched inside a rAF loop
  * frame.  Makes `dispatch` return a function to remove the action from the queue in
  * this case.

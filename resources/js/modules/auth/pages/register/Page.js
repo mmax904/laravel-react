@@ -99,7 +99,7 @@ class Page extends Component {
   render() {
     // check if user is authenticated then redirect him to home page
     if (this.props.isAuthenticated) {
-      return <Redirect to="/" />
+      return <Redirect to="/laravel/larareact/public/" />
     }
     
     const { name, email, password, passwordConfirmation } = this.state.credentials

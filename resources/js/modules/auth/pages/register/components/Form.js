@@ -70,7 +70,7 @@ const Form = ({ name, email, password, passwordConfirmation, errors, handleChang
     <button className="btn btn-lg btn-primary btn-block"
             type="submit"
             disabled={errors.any()}>Sign Up</button>
-    <p>Back to<Link to="/login" className="btn btn-link">Login</Link></p>
+    <p>Back to<Link to="/laravel/larareact/public/login" className="btn btn-link">Login</Link></p>
   </form>)
 }
 

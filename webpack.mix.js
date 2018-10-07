@@ -33,6 +33,8 @@ mix.webpackConfig({
 mix.react('resources/js/app.js', 'public/js')
     .extract(['react'])
     .sass('resources/sass/app.scss', 'public/css');
+
+mix.version();
  
 if (mix.inProduction()) {
     mix.version()

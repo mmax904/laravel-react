@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 import $ from 'jquery'
 import _ from 'lodash'
 import { Redirect } from 'react-router-dom'
-import { login } from '../../service'
+import { login, checkLoggedIn } from '../../service'
 import ReeValidate from 'ree-validate'
+import { authCheck } from '../../store/actions'
 
 // import components
 import Form from './components/Form'
@@ -26,7 +27,8 @@ class Page extends Component {
 
     this.validator = new ReeValidate({
       email: 'required|email',
-      password: 'required|min:6'
+      password: 'required|min:6',
+      remember: '',
     })
 
     // set the state of the app
@@ -85,20 +87,31 @@ class Page extends Component {
   }
 
   submit(credentials) {
-    this.props.dispatch(login(credentials))
-      .catch(({ error, statusCode }) => {
-        const { errors } = this.validator
-
-        if (statusCode === 422) {
-          _.forOwn(error, (message, field) => {
-            errors.add(field, message);
-          });
-        } else if (statusCode === 401) {
-          errors.add('password', error);
-        }
-
-        this.setState({ errors })
-      })
+    // this.props.dispatch(checkLoggedIn(this.props))
+    // .then(() => {
+    //       console.log('then-main');
+    //       console.log(this.props);
+    //     })
+    // .catch(() => {
+        this.props.dispatch(login(credentials))
+        .then(() => {
+          console.log('then');
+          console.log(this.props);
+        })
+        .catch(({ error, statusCode }) => {
+          console.log('catch');
+          console.log(this.props);
+          const { errors } = this.validator
+          if (statusCode === 422) {
+            _.forOwn(error, (message, field) => {
+              errors.add(field, message);
+            });
+          } else if (statusCode === 401) {
+            errors.add('password', error);
+          }
+          this.setState({ errors })
+        })
+    //});
   }
 
   // render component
@@ -106,7 +119,7 @@ class Page extends Component {
 
     // check if user is authenticated then redirect him to home page
     if (this.props.isAuthenticated) {
-      return <Redirect to="/" />
+      return <Redirect to="/laravel/larareact/public/" />
     }
     const props = {
       email: this.state.credentials.email,

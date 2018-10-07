@@ -24,6 +24,9 @@ import Routes from './routes'
 import { authCheck } from './modules/auth/store/actions'
 
 store.dispatch(authCheck())
+// store.dispatch((dispatch) =>{
+// 	dispatch(authCheck());
+// })
 
 render(
     (

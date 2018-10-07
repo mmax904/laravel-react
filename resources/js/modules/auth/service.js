@@ -1,6 +1,7 @@
 import Http from '../../utils/Http'
 import * as authActions from './store/actions'
 import Transformer from '../../utils/Transformer'
+import store from '../../store'
 
 /**
  * fetch the current logged in user
@@ -19,7 +20,23 @@ export function fetchUser() {
       })
   }
 }
-
+/**
+ * Check if user is logged in or not
+ *
+ * @returns {function(*)}
+ */
+export function checkLoggedIn(props) {
+    return dispatch => (
+        new Promise((resolve, reject) => {
+            dispatch(authActions.authCheck())
+            if(store.getState().auth.isAuthenticated) {
+                return resolve();
+            } else {
+                return reject();
+            }
+        })
+    )
+}
 /**
  * login user
  *

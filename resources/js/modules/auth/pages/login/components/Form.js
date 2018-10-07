@@ -44,7 +44,7 @@ const Form = ({ email, password, remember, errors, handleChange, handleSubmit })
       <label className="custom-control custom-checkbox">
         <input type="checkbox"
                name="remember"
-               className="custom-control-input"
+               className="custom-control-checkbox"
                onChange={e => handleChange(e.target.name, !remember)}/>
         <span className="custom-control-indicator" />
         <span className="custom-control-description small">Remember me on this computer</span>
@@ -53,7 +53,7 @@ const Form = ({ email, password, remember, errors, handleChange, handleSubmit })
     <button className="btn btn-lg btn-primary btn-block"
             type="submit"
             disabled={errors.any()}>Sign In</button>
-    <p>Not a member? <Link to='/register'>Signup here</Link></p>
+    <p>Not a member? <Link to='/laravel/larareact/public/register'>Signup here</Link></p>
   </form>
 )
 
