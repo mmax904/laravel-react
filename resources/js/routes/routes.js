@@ -1,3 +1,4 @@
+//https://medium.freecodecamp.org/an-introduction-to-the-redux-first-routing-model-98926ebf53cb
 // import modular routes
 import webRoutes from "../modules/web/routes"
 import authRoutes from "../modules/auth/routes"

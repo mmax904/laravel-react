@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-
+import User from '../modules/user/User'
 // import services actions
 import { fetchUser } from '../modules/auth/service'
 
@@ -19,14 +19,21 @@ class Layout extends Component {
     children: PropTypes.node.isRequired,
     dispatch: PropTypes.func.isRequired,
   }
-
   componentWillMount() {
+    console.log('mounting layout');
+    this.unlisten = this.props.history.listen((location, action) => {
+      console.log(`The current URL is ${location.pathname}${location.search}${location.hash}`)
+      console.log(`The last navigation action was ${action}`)
+    });
     const { isAuthenticated, user } = this.props
-
+    //Cheking if looged in and store has user value
     if (isAuthenticated && !user.id) {
       this.props.dispatch(fetchUser())
     }
+  }
 
+  componentWillUnmount() {
+      this.unlisten();
   }
 
   render() {
@@ -39,9 +46,11 @@ class Layout extends Component {
 }
 
 const mapStateToProps = state => {
+  let isAuthenticated = !!localStorage.getItem('access_token')
   return {
-    isAuthenticated: state.auth.isAuthenticated,
-    user: state.user,
+    //isAuthenticated: state.auth.isAuthenticated,
+    isAuthenticated: isAuthenticated,
+    user: isAuthenticated ? state.user : new User({}),
   }
 }
 
